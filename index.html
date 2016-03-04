@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.17/angular-ui-router.min.js"></script>
+<script type="text/javascript" src="app.js"></script>
+<link rel="stylesheet" type="text/css" href="mystyle.css">
+</head>
+<body ng-app="myapp" ng-controller ="mycontroller as vm ">
+	<div class="persons">
+		<div> WithOut trackBy</div>
+		<ul>
+			<li ng-repeat="person in vm.persons">
+				id:{{person.id}}, Name:{{person.name}}
+			</li>
+		</ul>
+	</div>
+	<br/><br/>
+	<div class="persons">
+		<div> With trackBy</div>
+		<ul>
+			<li ng-repeat="person in vm.persons track by person.id">
+				id:{{person.id}}, Name:{{person.name}}
+			</li>
+		</ul>
+	</div>
+	<button ng-click="vm.Addpersons()">Add</button>
+</body>
+</html>
